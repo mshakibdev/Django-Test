@@ -1,0 +1,30 @@
+{% extends 'part/base.html' %}
+{% block base %}
+    <div>
+            <h1>{{ post.title }}</h1>
+        {% include 'part/category.html' %}
+            <h5>created: {{ post.time }}</h5>
+            <hr>
+            <h4>{{ post.body }}</h4>
+            <hr>
+            <hr>
+
+    <!-- form code -->
+    <div class="jumbotron">
+    <div class="container">
+        <form class="form-horizontal" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </form>
+
+    </div>
+</div>
+
+    <!-- form code end -->
+
+
+
+    </div>
+
+{% endblock %}

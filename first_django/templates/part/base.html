@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django App</title>
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
+</head>
+<body>
+    <h1 style="text-align: center">Food Blog</h1>
+    <hr>
+    <hr>
+
+{% block base %}
+
+{% endblock %}
+
+
+<footer>
+    <h2><a href="{% url 'contact_page' %}">Contact Us</a></h2>
+    <h3>{{ datetime }}</h3>
+</footer>
+</body>
+</html>

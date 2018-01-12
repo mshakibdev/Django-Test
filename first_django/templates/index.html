@@ -1,0 +1,19 @@
+{% extends 'part/base.html' %}
+{% block base %}
+
+    <div>
+        {% for post in posts %}
+            <a href="{% url "view_post" post.pk %}"><h1>{{ post.title }}</h1></a>
+           {% include "part/category.html" %}
+            <h5>created: {{ post.time }}</h5>
+            <hr>
+            <h4>{{ post.body | truncatewords:20 }}</h4>
+            <hr>
+            <hr>
+            <br>
+
+        {% endfor %}
+
+    </div>
+
+{% endblock %}
